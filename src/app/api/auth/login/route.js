@@ -6,8 +6,8 @@ export async function POST(request) {
     const { username, password } = await request.json();
 
     if (
-      username === "namburichandradeep123@gmail.com" &&
-      password === "Chandusmart@123"
+      username === "9885360325" &&
+      password === "kamlesh@123"
     ) {
       const cookieStore = await cookies();
       cookieStore.set("portfolio_admin_session", "session_authenticated_alex_morgan", {

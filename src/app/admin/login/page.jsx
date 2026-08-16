@@ -68,14 +68,14 @@ export default function AdminLogin() {
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.formGroup}>
-            <label style={styles.label} htmlFor="username">Email Address</label>
+            <label style={styles.label} htmlFor="username">Mobile Number</label>
             <input
               style={styles.input}
-              type="email"
+              type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="namburichandradeep123@gmail.com"
+              placeholder="9885360325"
               required
             />
           </div>

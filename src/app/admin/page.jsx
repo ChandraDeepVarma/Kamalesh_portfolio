@@ -595,6 +595,39 @@ export default function AdminDashboard() {
     });
   };
 
+  if (loading || !data) {
+    return (
+      <div style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#030308",
+        color: "#94a3b8",
+        fontFamily: "'Plus Jakarta Sans', sans-serif"
+      }}>
+        <div style={{ textAlign: "center" }}>
+          <div style={{
+            border: "3px solid rgba(255, 255, 255, 0.1)",
+            borderTop: "3px solid #8b5cf6",
+            borderRadius: "50%",
+            width: "36px",
+            height: "36px",
+            animation: "spin 1s linear infinite",
+            margin: "0 auto 16px auto"
+          }} />
+          <div>Loading Control Center...</div>
+          <style>{`
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          `}</style>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={styles.container}>
       <div style={styles.ambientBlob1}></div>
