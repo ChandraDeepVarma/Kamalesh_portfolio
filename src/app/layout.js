@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Chandra Deep Varma Namburi — Full Stack Developer",
+  title: "kamalesh varma Portfolio",
   description: "I craft scalable digital products from concept to deployment — combining precise engineering with thoughtful design to build things that actually matter.",
 };
 

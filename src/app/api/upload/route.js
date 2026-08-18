@@ -3,16 +3,12 @@ import { NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import clientPromise from "@/lib/mongodb";
 
-if (process.env.CLOUDINARY_URL) {
-  cloudinary.config({ secure: true });
-} else {
-  cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME || process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-    secure: true,
-  });
-}
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME || "dkaqhkrzf",
+  api_key: process.env.CLOUDINARY_API_KEY || "756683599387747",
+  api_secret: process.env.CLOUDINARY_API_SECRET || "Tv4e-xN07ZQxri7QAs_hksIKtQ8",
+  secure: true,
+});
 
 export async function POST(request) {
   try {
@@ -90,6 +86,7 @@ export async function POST(request) {
     });
   } catch (error) {
     console.error("Error in upload API:", error);
-    return NextResponse.json({ error: "Failed to upload file to Cloudinary" }, { status: 500 });
+    const detail = error?.message ? `: ${error.message}` : "";
+    return NextResponse.json({ error: `Failed to upload file to Cloudinary${detail}` }, { status: 500 });
   }
 }

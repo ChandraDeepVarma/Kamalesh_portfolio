@@ -7,7 +7,6 @@ export default function About({ data }) {
     exp: 0,
     projects: 0,
     tech: 0,
-    clients: 0,
   });
   const sectionRef = useRef(null);
   const animatedRef = useRef(false);
@@ -34,7 +33,7 @@ export default function About({ data }) {
     function animateCounters() {
       const duration = 1600;
       const startTime = performance.now();
-      const targets = data.stats || { exp: 6, projects: 80, tech: 30, clients: 40 };
+      const targets = data.stats || { exp: 6, projects: 80, tech: 30 };
 
       function step(now) {
         const elapsed = now - startTime;
@@ -45,7 +44,6 @@ export default function About({ data }) {
           exp: Math.floor(ease * targets.exp),
           projects: Math.floor(ease * targets.projects),
           tech: Math.floor(ease * targets.tech),
-          clients: Math.floor(ease * targets.clients),
         });
 
         if (progress < 1) {
@@ -87,15 +85,11 @@ export default function About({ data }) {
             </div>
             <div className="stat-card">
               <div className="stat-number">{stats.projects}+</div>
-              <div className="stat-label">Projects Shipped</div>
+              <div className="stat-label">Projects</div>
             </div>
             <div className="stat-card">
               <div className="stat-number">{stats.tech}+</div>
               <div className="stat-label">Technologies</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">{stats.clients}+</div>
-              <div className="stat-label">Happy Clients</div>
             </div>
           </div>
         </div>

@@ -896,10 +896,6 @@ export default function AdminDashboard() {
                     <label style={styles.fieldLabel}>Counter: Technologies</label>
                     <input style={styles.fieldInput} type="number" value={data.about.stats.tech} onChange={(e) => updateAboutStats("tech", e.target.value)} />
                   </div>
-                  <div style={styles.fieldGroup}>
-                    <label style={styles.fieldLabel}>Counter: Happy Clients</label>
-                    <input style={styles.fieldInput} type="number" value={data.about.stats.clients} onChange={(e) => updateAboutStats("clients", e.target.value)} />
-                  </div>
                 </div>
               </div>
             )}
@@ -1269,9 +1265,9 @@ export default function AdminDashboard() {
                     textAlign: "center",
                     color: "#94a3b8",
                   }}>
-                     <span style={{ fontSize: "2.5rem", display: "block", marginBottom: "16px" }}>✉</span>
-                     <p style={{ fontWeight: "600", fontSize: "1.1rem", color: "#f8fafc" }}>Your inbox is empty</p>
-                     <p style={{ fontSize: "0.85rem", color: "#64748b", marginTop: "6px" }}>When visitors send messages via your contact form, they will appear here.</p>
+                    <span style={{ fontSize: "2.5rem", display: "block", marginBottom: "16px" }}>✉</span>
+                    <p style={{ fontWeight: "600", fontSize: "1.1rem", color: "#f8fafc" }}>Your inbox is empty</p>
+                    <p style={{ fontSize: "0.85rem", color: "#64748b", marginTop: "6px" }}>When visitors send messages via your contact form, they will appear here.</p>
                   </div>
                 ) : (
                   <div style={{
